@@ -30,28 +30,6 @@ namespace GameEngine
         {
             NrOfPlayer = numberOfPlayers;
             Console.WriteLine($"Game started with {nrOfPlayer} players");
-            GameBoard();
-        }
-
-        public void GameBoard()
-        {
-            Console.WriteLine("             + - - - +            ");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine("             |       |");
-            Console.WriteLine(" + - - - - - +   #   + - - - - - +");
-            Console.WriteLine(" |               #               |");
-            Console.WriteLine(" |           # # # # #           |");
-            Console.WriteLine(" |               #               |");
-            Console.WriteLine(" + - - - - - +   #   + - - - - - +");
-            Console.WriteLine("             |       |");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine("             + - - - +            ");
         }
     }
 }

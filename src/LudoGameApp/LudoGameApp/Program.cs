@@ -12,7 +12,28 @@ namespace ConsoleApp3
            
             var game = new LudoEngine();
             game.StartGame(int.Parse(Console.ReadLine()));
+            GameBoard();
+        }
 
+        static void GameBoard()
+        {
+            Console.WriteLine("             + - - - +            ");
+            Console.WriteLine(" + - - +     |       |     + - - +");
+            Console.WriteLine(" |     |     |       |     |     |");
+            Console.WriteLine(" |     |     |       |     |     |");
+            Console.WriteLine(" + - - +     |       |     + - - +");
+            Console.WriteLine("             |       |");
+            Console.WriteLine(" + - - - - - +   #   + - - - - - +");
+            Console.WriteLine(" |               #               |");
+            Console.WriteLine(" |           # # # # #           |");
+            Console.WriteLine(" |               #               |");
+            Console.WriteLine(" + - - - - - +   #   + - - - - - +");
+            Console.WriteLine("             |       |");
+            Console.WriteLine(" + - - +     |       |     + - - +");
+            Console.WriteLine(" |     |     |       |     |     |");
+            Console.WriteLine(" |     |     |       |     |     |");
+            Console.WriteLine(" + - - +     |       |     + - - +");
+            Console.WriteLine("             + - - - +            ");
         }
     }
 }
