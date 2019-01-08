@@ -13,6 +13,7 @@ namespace ConsoleApp3
             var game = new LudoEngine();
             game.StartGame(int.Parse(Console.ReadLine()));
             GameBoard();
+            Console.WriteLine("");
         }
 
         static void GameBoard()
