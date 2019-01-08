@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LudoGameApp", "LudoGameApp\LudoGameApp.csproj", "{6169C336-3699-4341-ABA0-0C6DAB33B4FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngine", "GameEngine\GameEngine.csproj", "{B7891627-C7F7-4B82-959A-8B3C6EAF7BA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6169C336-3699-4341-ABA0-0C6DAB33B4FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6169C336-3699-4341-ABA0-0C6DAB33B4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6169C336-3699-4341-ABA0-0C6DAB33B4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6169C336-3699-4341-ABA0-0C6DAB33B4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7891627-C7F7-4B82-959A-8B3C6EAF7BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7891627-C7F7-4B82-959A-8B3C6EAF7BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7891627-C7F7-4B82-959A-8B3C6EAF7BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7891627-C7F7-4B82-959A-8B3C6EAF7BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12CD876E-0146-4BAD-BD9D-ABB05CEB2B32}
+	EndGlobalSection
+EndGlobal
