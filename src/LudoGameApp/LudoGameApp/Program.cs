@@ -9,9 +9,9 @@ namespace ConsoleApp3
         {
             Console.WriteLine("Welcome to Ludo!");
             Console.WriteLine("How many players:");
-            int numberOfPlayers = int.Parse(Console.ReadLine());
+           
             var game = new LudoEngine();
-            game.StartGame(numberOfPlayers);
+            game.StartGame(int.Parse(Console.ReadLine()));
 
         }
     }
