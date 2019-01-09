@@ -6,7 +6,7 @@ namespace GameEngine
 {
     public class Dice
     {
-        public int ThrowDice()
+        public static int ThrowDice()
         {
             Random rnd = new Random();
             return rnd.Next(1, 7);

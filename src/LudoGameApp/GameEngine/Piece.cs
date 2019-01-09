@@ -16,5 +16,11 @@ namespace GameEngine
             Movement = 0;
             InNest = true;
         }
+
+        public void MovePiece(int diceValue)
+        {
+            Movement += diceValue;
+        }
+
     }
 }
