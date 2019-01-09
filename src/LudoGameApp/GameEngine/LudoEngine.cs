@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
+
 namespace GameEngine
 {
     public class LudoEngine
     {
         private int nrOfPlayer;
-        private bool OkToStart;
+        public bool OkToStart { get; set; }
         public int NrOfPlayer
         {
             get
@@ -39,13 +40,18 @@ namespace GameEngine
                     Players.Add(new Player(i));
 
                 }
-            }
-            else
-            {
-                Console.WriteLine("Game will not start");
-            }
+            }           
 
         }
+
+        public void Movement(int playerNr, int diceValue, int pieceNr)
+        {
+            Players[playerNr - 1].Pieces[pieceNr].MovePiece(diceValue);
+        }
+        
+
+
+        
 
     }
 }
