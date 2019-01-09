@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GameEngine
 {
@@ -6,17 +7,17 @@ namespace GameEngine
     {
         private int nrOfPlayer;
         private bool OkToStart;
-        public int NrOfPlayer {
+        public int NrOfPlayer
+        {
             get
             {
                 return nrOfPlayer;
             }
             set
             {
-                if (value <2 || value > 4)
+                if (value < 2 || value > 4)
                 {
                     OkToStart = false;
-                    Console.WriteLine("Wrong number of players");
                 }
                 else
                 {
@@ -25,19 +26,25 @@ namespace GameEngine
                 }
             }
         }
+        public List<Player> Players { get; set; }
 
-        public void StartGame(int numberOfPlayers)
+        public LudoEngine(int numberOfPlayers)
         {
             NrOfPlayer = numberOfPlayers;
             if (OkToStart)
             {
-                Console.WriteLine($"Game started with {nrOfPlayer} players");
+                Players = new List<Player>();
+                for (int i = 0; i < NrOfPlayer; i++)
+                {
+                    Players.Add(new Player(i));
+
+                }
             }
             else
             {
                 Console.WriteLine("Game will not start");
             }
-        
+
         }
 
     }

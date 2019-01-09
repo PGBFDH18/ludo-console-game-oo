@@ -4,16 +4,17 @@ using System.Text;
 
 namespace GameEngine
 {
-    class Piece
+    public class Piece
     {
 
         public int StartLocation  { get; set; }
         public int Movement { get; set; }
         public bool InNest { get; set; }
 
-        //public Piece (int PlayerNumber)
-        //{
-
-        //}
+        public Piece()
+        {
+            Movement = 0;
+            InNest = true;
+        }
     }
 }

@@ -4,27 +4,21 @@ using System.Text;
 
 namespace GameEngine
 {
-    class Player
+    public class Player
     {
         public string Color { get; set; }
+        public List<Piece> Pieces { get; set; }
 
-        public Player (int PlayerNumber)
+        public Player(int PlayerNumber)
         {
-            if (PlayerNumber == 1)
+            string[] playerColor = new string[4] { "Blue", "Red", "Yellow", "Green" };
+
+            Color = playerColor[PlayerNumber];
+
+            Pieces = new List<Piece>();
+            for (int i = 0; i < 4; i++)
             {
-                Color = "Blue";
-            }
-            else if (PlayerNumber == 2)
-            {
-                Color = "Red";
-            }
-            else if (PlayerNumber == 3)
-            {
-                Color = "Yellow";
-            }
-            else
-            {
-                Color = "Green";
+                Pieces.Add(new Piece());
             }
         }
     }
