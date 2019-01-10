@@ -22,6 +22,7 @@ Once you've completed 40 steps you can start to move towards the middle.
 
 After 40 steps you have 5 steps to get into the middle.
 
+Choose Color and playerorder
 ---
 Colors are given to players.
 
