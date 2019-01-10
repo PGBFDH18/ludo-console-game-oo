@@ -17,7 +17,12 @@ namespace ConsoleApp3
             }
             else
             {
-                GameBoard();
+                //GameBoard();
+                while (true)
+                {
+                    Console.WriteLine($"It is {game.nextTurn()}'s turn to move");
+
+                }
             }
 
             Console.ReadKey();

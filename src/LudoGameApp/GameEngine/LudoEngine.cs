@@ -6,6 +6,7 @@ namespace GameEngine
 {
     public class LudoEngine
     {
+        private static int Counter = 0;
         private int nrOfPlayer;
         public bool OkToStart { get; set; }
         public int NrOfPlayer
@@ -40,7 +41,7 @@ namespace GameEngine
                     Players.Add(new Player(i));
 
                 }
-            }           
+            }
 
         }
 
@@ -48,10 +49,22 @@ namespace GameEngine
         {
             Players[playerNr - 1].Pieces[pieceNr].MovePiece(diceValue);
         }
-        
 
 
-        
+        public string nextTurn()
+        {
+            if (Counter == NrOfPlayer)
+            {
+                Counter = 0;
+            }
+            string x = Players[Counter].Color;
+            Counter++;
+            return x;
+        }
+
+
+
+
 
     }
 }
