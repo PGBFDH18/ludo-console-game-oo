@@ -40,8 +40,11 @@ Above repeated for player 1-x(max 4)
 Scenario
 ---
 Scenario 1:
+
 Pieces can stand on same tile / pieces cannot stay on same tile (invalid dicethrow, throw again)
+
 Scenario 2:
 If piece has traveled 45 tiles (one lap) the piece has entered the finishline. The piece is removed from board and nest.
+
 Scenario 3:
 If all four playerpieces has entered the finishline that player wins and the game ends.
