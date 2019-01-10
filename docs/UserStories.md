@@ -15,3 +15,5 @@ If you have one of your own pices blocking your way you'll have to move the one 
 If you have two of your pieces on that same position you block the path for other players.
 
 Once all your pieces are in the middle circle you've won.
+
+When you've gone a complete lap around the game board you'll have to move towards the center with even dice throws.
