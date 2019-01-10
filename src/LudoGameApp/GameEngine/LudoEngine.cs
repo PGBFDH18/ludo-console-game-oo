@@ -73,7 +73,7 @@ namespace GameEngine
             if (piecesInNest == 4 && diceThrow !=6)
             {
                 x[0] = Players[Counter].Color;
-                x[1] = diceThrow + "Player cant move. Next Player";
+                x[1] = diceThrow + " Player cant move. Next Player";
                 Counter++;
                 return x;
             }
