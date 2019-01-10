@@ -54,13 +54,39 @@ namespace GameEngine
         public string[] NextTurn()
         {
             string[] x = new string[2];
+
             if (Counter == NrOfPlayer)
             {
                 Counter = 0;
             }
+
+            int diceThrow = Dice.ThrowDice();
+
+            int piecesInNest = 0;
+            foreach (var item in Players[Counter].Pieces)
+            {
+                if (item.InNest)
+                {
+                    piecesInNest++;
+                }
+            }
+            if (piecesInNest == 4 && diceThrow !=6)
+            {
+                x[0] = Players[Counter].Color;
+                x[1] = diceThrow + "Player cant move. Next Player";
+                Counter++;
+                return x;
+            }
+
+
             x[0] = Players[Counter].Color;
-            x[1] = Dice.ThrowDice().ToString();
-            Counter++;
+            x[1] = "" + diceThrow;
+            if (diceThrow != 6)
+            {
+                Counter++;
+            }
+            
+
             return x;
         }
 
