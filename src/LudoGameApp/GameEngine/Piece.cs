@@ -10,11 +10,13 @@ namespace GameEngine
         public int StartLocation  { get; set; }
         public int Movement { get; set; }
         public bool InNest { get; set; }
+        public int PieceName { get; set; }
 
-        public Piece()
+        public Piece(int pieceNr)
         {
             Movement = 0;
             InNest = true;
+            PieceName = pieceNr;
         }
 
         public void MovePiece(int diceValue)

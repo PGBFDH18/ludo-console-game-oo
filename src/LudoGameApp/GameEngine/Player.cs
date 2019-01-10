@@ -18,7 +18,7 @@ namespace GameEngine
             Pieces = new List<Piece>();
             for (int i = 0; i < 4; i++)
             {
-                Pieces.Add(new Piece());
+                Pieces.Add(new Piece(i+1));
             }
         }
     }
