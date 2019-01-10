@@ -51,13 +51,15 @@ namespace GameEngine
         }
 
 
-        public string nextTurn()
+        public string[] nextTurn()
         {
+            string[] x = new string[2];
             if (Counter == NrOfPlayer)
             {
                 Counter = 0;
             }
-            string x = Players[Counter].Color;
+            x[0] = Players[Counter].Color;
+            x[1] = Dice.ThrowDice().ToString();
             Counter++;
             return x;
         }
