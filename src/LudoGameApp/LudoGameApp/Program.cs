@@ -20,7 +20,7 @@ namespace ConsoleApp3
                 //GameBoard();
                 while (true)
                 {
-                    Console.WriteLine($"It is {game.nextTurn()[0]}'s turn to move\nDice showed {game.nextTurn()[1]}");
+                    Console.WriteLine($"It is {game.NextTurn()[0]}'s turn to move\nDice showed {game.NextTurn()[1]}");
 
                 }
             }

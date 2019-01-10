@@ -51,7 +51,7 @@ namespace GameEngine
         }
 
 
-        public string[] nextTurn()
+        public string[] NextTurn()
         {
             string[] x = new string[2];
             if (Counter == NrOfPlayer)
