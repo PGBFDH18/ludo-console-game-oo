@@ -22,6 +22,7 @@ Once you've completed 40 steps you can start to move towards the middle.
 
 After 40 steps you have 5 steps to get into the middle.
 
+Choose Color and playerorder
 ---
 Colors are given to players.
 
@@ -41,7 +42,9 @@ Scenario
 ---
 Scenario 1:
 Pieces can stand on same tile / pieces cannot stay on same tile (invalid dicethrow, throw again)
+
 Scenario 2:
 If piece has traveled 45 tiles (one lap) the piece has entered the finishline. The piece is removed from board and nest.
+
 Scenario 3:
 If all four playerpieces has entered the finishline that player wins and the game ends.
