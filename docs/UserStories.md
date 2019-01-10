@@ -44,7 +44,10 @@ Scenario 1:
 Pieces can stand on same tile / pieces cannot stay on same tile (invalid dicethrow, throw again)
 
 Scenario 2:
-If piece has traveled 45 tiles (one lap) the piece has entered the finishline. The piece is removed from board and nest.
+If piece has traveled 40 tiles the piece has entered the finishline (one lap + 5 finishtiles). The piece is removed from board and nest.
 
 Scenario 3:
 If all four playerpieces has entered the finishline that player wins and the game ends.
+
+Scenario 4: 
+When a piece has moved 40 tiels (one lap) it must move 5 finishtiles to enter the finishline. The piece must move an even number to enter the finishline. If the piece moves to many tiles it will move backwards on the finishtiles untill it reaches the first finishtile. 
