@@ -40,7 +40,6 @@ Above repeated for player 1-x(max 4)
 Scenario
 ---
 Scenario 1:
-
 Pieces can stand on same tile / pieces cannot stay on same tile (invalid dicethrow, throw again)
 
 Scenario 2:
