@@ -10,7 +10,7 @@ To leave the nest you have to throw a six.
 
 If you hit a six you'll be allowed to throw the dice again.
 
-If you have one of your own pices blocking your way you'll have to move the one that have progressed the fursthest.
+If you have one of your own pieces blocking your way you'll have to move the one that have progressed the fursthest.
 
 If you have two of your pieces on that same position you block the path for other players.
 
@@ -21,3 +21,5 @@ When you've completed a lap around the gameboard you'll have to move towards the
 Once you've completed 40 steps you can start to move towards the middle.
 
 After 40 steps you have 5 steps to get into the middle.
+
+
