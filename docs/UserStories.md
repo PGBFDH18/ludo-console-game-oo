@@ -1,6 +1,6 @@
 As a player, I want to play Ludo with the official rules.
 
-As a player, I want the program to do all the logic for the players.
+The program should do all the logic for the players.
 
 You should be able to play as two, three or four players.
 
@@ -16,7 +16,7 @@ If you have two of your pieces on that same position you block the path for othe
 
 Once all your pieces are in the middle circle you've won.
 
-When you've gone a complete lap around the game board you'll have to move towards the center with even dice throws.
+When you've completed a lap around the gameboard you'll have to move towards the center with even dice throws.
 
 Once you've completed 40 steps you can start to move towards the middle.
 
