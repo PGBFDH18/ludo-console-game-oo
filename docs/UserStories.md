@@ -17,3 +17,5 @@ If you have two of your pieces on that same position you block the path for othe
 Once all your pieces are in the middle circle you've won.
 
 When you've gone a complete lap around the game board you'll have to move towards the center with even dice throws.
+
+Once you've completed 40 steps you can start to move towards the middle.
