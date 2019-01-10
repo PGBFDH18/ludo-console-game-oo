@@ -22,20 +22,20 @@ Once you've completed 40 steps you can start to move towards the middle.
 
 After 40 steps you have 5 steps to get into the middle.
 
+
+
 Colors are given to players.
----
+
 Player throws dice (automaticly) to see who starts.
----
+
 Player with highest dicethrow starts.
----
 
 Player throws dice
 (Display: Wich pieces are in the nest, wich pieces are on the bord and location for the pieces (number).
 If dicethrow is a 6, player can choose to take a piece from nest to board, or go 6 steps with piece that is already on board.
 
----
 Above repeated for player 1-x(max 4)
----
+
 Scenario 1:
 Pieces can stand on same tile / pieces cannot stay on same tile (invalid dicethrow, throw again)
 Scenario 2:
