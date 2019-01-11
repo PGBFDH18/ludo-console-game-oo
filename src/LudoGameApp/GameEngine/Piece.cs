@@ -11,12 +11,15 @@ namespace GameEngine
         public int Movement { get; set; }
         public bool InNest { get; set; }
         public int PieceName { get; set; }
+        public string PlayerColor { get; set; }
 
-        public Piece(int pieceNr)
+        public Piece(int pieceNr, string color, int startPosition)
         {
             Movement = 0;
             InNest = true;
             PieceName = pieceNr;
+            PlayerColor = color;
+            StartLocation = startPosition;
         }
 
         public void MovePiece(int diceValue)
