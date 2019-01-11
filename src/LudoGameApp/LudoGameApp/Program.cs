@@ -21,9 +21,22 @@ namespace ConsoleApp3
                 while (true)
                 {
                     string[] result = game.NextTurn();
+
+                    //if (result[2] == "1")
+                    //{
+
+                    //}
                    
                     Console.WriteLine($"It is {result[0]}'s turn to move\nDice showed {result[1]}");
 
+                    Console.WriteLine("What do u want to do?");
+                    Console.WriteLine("1: Move piece");
+                    int choice = int.Parse(Console.ReadLine());
+
+                    if (choice == 1)
+                    {
+                        
+                    }
                 }
             }
 

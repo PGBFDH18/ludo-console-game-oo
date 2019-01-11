@@ -61,7 +61,7 @@ namespace GameEngine
 
         public string[] NextTurn()
         {
-            string[] x = new string[2];
+            string[] playerAndDice = new string[2];
 
             if (Counter == NrOfPlayer)
             {
@@ -69,6 +69,11 @@ namespace GameEngine
             }
 
             int diceThrow = Dice.ThrowDice();
+
+            playerAndDice[0] = PlayersList[Counter].Color;
+            playerAndDice[1] = "" + diceThrow;
+
+            return playerAndDice;
 
             int piecesInNest = 0;
             foreach (var item in PlayersList[Counter].Pieces)
@@ -78,29 +83,54 @@ namespace GameEngine
                     piecesInNest++;
                 }
             }
-            if (piecesInNest == 4 && diceThrow != 6)
+
+            if (piecesInNest == 4)
             {
-                x[0] = PlayersList[Counter].Color;
-                x[1] = diceThrow + " Player cant move. Next Player";
-                Counter++;
-                return x;
+                return FirstPieceFromNest(diceThrow);
             }
-            else if(piecesInNest == 4 && diceThrow == 6)
+
+            if (piecesInNest < 4 && piecesInNest != 0 && diceThrow == 6)
+            {
+                return playerAndDice;
+            }
+            else if(piecesInNest == 3)
+            {
+
+            }
+
+            if (diceThrow != 6)
+            {
+                Counter++;
+            }
+
+            return playerAndDice;
+        }
+
+        private string[] FirstPieceFromNest(int diceThrow)
+        {
+            string[] playerAndDice = new string[2];
+
+            if (diceThrow != 6)
+            {
+                playerAndDice[0] = PlayersList[Counter].Color;
+                playerAndDice[1] = diceThrow + " Player cant move. Next Player";
+                Counter++;
+                return playerAndDice;
+            }
+            else if (diceThrow == 6)
             {
                 PlayersList[Counter].Pieces[0].Movement = 1;
                 TileList[PlayersList[Counter].Pieces[0].StartLocation].AddPieceToTile(PlayersList[Counter].Pieces[0]);
             }
 
-
-            x[0] = PlayersList[Counter].Color;
-            x[1] = "" + diceThrow;
+            playerAndDice[0] = PlayersList[Counter].Color;
+            playerAndDice[1] = "" + diceThrow;
             if (diceThrow != 6)
             {
                 Counter++;
             }
-            
 
-            return x;
+            return playerAndDice;
         }
 
     }
