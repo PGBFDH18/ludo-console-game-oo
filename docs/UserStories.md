@@ -12,7 +12,7 @@ If you hit a six you'll be allowed to throw the dice again.
 
 If you have one of your own pices blocking your way you'll have to move the one that have progressed the fursthest.
 
-If you have two of your pieces on that same position you block the path for other players.
+If you have two of your pieces on that same position you block the path for other players and yourself.
 
 Once all your pieces are in the middle circle you've won.
 
