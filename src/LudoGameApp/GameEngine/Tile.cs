@@ -6,7 +6,7 @@ namespace GameEngine
 {
     public class Tile
     {
-        public static int TilePosition;
+        public int TilePosition;
         public List<Piece> PieceList;
         public bool Full;
         public bool Blocked;
@@ -49,5 +49,7 @@ namespace GameEngine
             }
             return true;
         }
+
+       
     }
 }

@@ -26,36 +26,31 @@ namespace ConsoleApp3
                 {
                     string[] result = game.NextTurn();
 
-                    //if (result[2] == "1")
-                    //{
-
-                    //}
+                    
 
                     Console.WriteLine($"It is {result[0]}'s turn to move\nDice showed {result[1]}");
 
-                    int choice = int.Parse(Console.ReadLine());
 
-                    foreach (var player in game.PlayersList)
-                    {
-                        if (player.Color == result[0])
-                        {
-                            for (int i = 0; i < 4; i++)
-                            {
-                                if (player.Pieces[i].InNest == true)
-                                {
-                                    Console.WriteLine($"Piece nr {i + 1} is in the nest");
-                                }
-                                else
-                                {
-                                    Console.WriteLine($"Piece nr {i + 1} have moved {player.Pieces[i].Movement}");
-                                }
-                            }
-                        }
-                    }
+                    PrintOutPieces(game, result[0]);
+
+              
                     Console.WriteLine("What do u want to do?");
-                    Console.WriteLine("1: Move piece number: ?\nPass the turn?");
+                    int choice = ReadInt("1: Move piece? \n2: Pass the turn?");
+                    
+                    if (choice == 1)
+                    {
+                        int pieceChoice = ReadInt("What piece number: ");
+                        game.MovePiece(pieceChoice);
 
-                    var test = listOfFunc[choice - 1].DynamicInvoke();
+                    }
+                    else
+                    {
+                        game.SkipTurn();
+                    }
+                    
+                    
+                    
+                    //var test = listOfFunc[choice - 1].DynamicInvoke();
 
                 }
             }
@@ -64,6 +59,48 @@ namespace ConsoleApp3
 
         }
 
+
+        static void PrintOutPieces(LudoEngine game, string playerColor)
+        {
+            foreach (var player in game.PlayersList)
+            {
+                if (player.Color == playerColor)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (player.Pieces[i].InNest == true)
+                        {
+                            Console.WriteLine($"Piece nr {i + 1} is in the nest");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Piece nr {i + 1} have moved {player.Pieces[i].Movement}");
+                        }
+                    }
+                }
+            }
+            foreach (var item in game.TileList)
+            {
+                if (item.PieceList.Count > 0)
+                {
+                    Console.Write("On tile position " + item.TilePosition  + " ");
+
+                    for (int i = 0; i < item.PieceList.Count; i++)
+                    {
+                        Console.Write(item.PieceList[i].PlayerColor + " ");
+                        Console.Write(item.PieceList[i].PieceName + ", ");
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+
+
+        static int ReadInt(string promt)
+        {
+            Console.WriteLine(promt);
+            return int.Parse(Console.ReadLine());
+        }
         static void GameBoard()
         {
             Console.WriteLine("             + - - - +            ");
