@@ -79,5 +79,7 @@ Ex2: If 2 pieces on board, dicethrow 6. Cannot move piece1, give player option t
 In Console:
 
 
+**Scenario 6:**
 
+**Errorhandling:** If piece has entered finishline and all other pieces are in nest. Only 6 should be a valid dicethrow to get pieces out of nest to board.
 
