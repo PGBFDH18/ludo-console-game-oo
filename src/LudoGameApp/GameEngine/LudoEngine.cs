@@ -133,5 +133,10 @@ namespace GameEngine
             return playerAndDice;
         }
 
+        public void SkipTurn()
+        {
+            Counter++;
+        }
+
     }
 }
