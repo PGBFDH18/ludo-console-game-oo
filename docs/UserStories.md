@@ -44,6 +44,8 @@ Display pieces tileposition, either in nest or on board (Use int movement to kno
 
 Display all options: Move piece, pass turn. If option not vaild --> **Scenario 5**
 
+If piece cannot move due to *full*, *blocked* or wrong dicenumber (not a 6 and player wants to move dice from nest to board). **Show errormessage**.
+
 Scenario
 ---
 **Scenario 1:**
@@ -69,11 +71,13 @@ When a piece has moved 40 tiels (one lap) it must move 5 finishtiles to enter th
 
 **Scenario 5:**
 
-If piece cannot move. Move different piece with same dicethrow
+If piece cannot move. Show errormessage. Move different piece with same dicethrow
 
 Ex1: If 2 pieces on board, dicethrow 1-5. cannot move piece1, give player option to move piece2 instead.
 
 Ex2: If 2 pieces on board, dicethrow 6. Cannot move piece1, give player option to either move piece2 or move out of nest instead.
 In Console:
+
+
 
 
