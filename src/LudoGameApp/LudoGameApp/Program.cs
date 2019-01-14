@@ -93,6 +93,21 @@ namespace ConsoleApp3
                     Console.WriteLine();
                 }
             }
+            foreach (var item in game.FinalStretch)
+            {
+                if (item.PieceList.Count > 0)
+                {
+                    Console.Write("On tile position " + item.TilePosition + " ");
+
+                    for (int i = 0; i < item.PieceList.Count; i++)
+                    {
+                        Console.Write(item.PieceList[i].PlayerColor + " ");
+                        Console.Write(item.PieceList[i].PieceName + ", ");
+                    }
+                    Console.WriteLine();
+                }
+
+            }
         }
 
 
