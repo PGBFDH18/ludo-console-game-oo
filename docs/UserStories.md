@@ -41,8 +41,8 @@ Above repeated for player 1-x(max 4)
 Display in console
 ---
 Display pieces tileposition, either in nest or on board (Use int movement to know when a piece has moved 40 tiles).
-Display all options: Move piece, pass turn. 
-If option not vaild --> Scenario 5
+
+Display all options: Move piece, pass turn. If option not vaild --> Scenario 5
 
 Scenario
 ---
@@ -60,7 +60,9 @@ When a piece has moved 40 tiels (one lap) it must move 5 finishtiles to enter th
 
 Scenario 5:
 If piece cannot move. Move different piece with same dicethrow
+
 Ex1: If 2 pieces on board, dicethrow 1-5. cannot move piece1, give player option to move piece2 instead.
+
 Ex2: If 2 pieces on board, dicethrow 6. Cannot move piece1, give player option to either move piece2 or move out of nest instead.
 In Console:
 
