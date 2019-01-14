@@ -97,7 +97,7 @@ namespace ConsoleApp3
             {
                 if (item.PieceList.Count > 0)
                 {
-                    Console.Write("On tile position " + item.TilePosition + " ");
+                    Console.Write("On final tile position " + item.TilePosition + " ");
 
                     for (int i = 0; i < item.PieceList.Count; i++)
                     {
