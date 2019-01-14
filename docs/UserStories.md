@@ -42,23 +42,33 @@ Display in console
 ---
 Display pieces tileposition, either in nest or on board (Use int movement to know when a piece has moved 40 tiles).
 
-Display all options: Move piece, pass turn. If option not vaild --> Scenario 5
+Display all options: Move piece, pass turn. If option not vaild --> **Scenario 5**
 
 Scenario
 ---
-Scenario 1:
+**Scenario 1:**
+
 Pieces can stand on same tile / pieces cannot stay on same tile (invalid dicethrow, throw again)
 
-Scenario 2:
+
+**Scenario 2:**
+
+
 If piece has traveled 40 tiles the piece has entered the finishline (one lap + 5 finishtiles). The piece is removed from board and nest.
 
-Scenario 3:
+
+**Scenario 3:**
+
 If all four playerpieces has entered the finishline that player wins and the game ends.
 
-Scenario 4:
+
+**Scenario 4:**
+
 When a piece has moved 40 tiels (one lap) it must move 5 finishtiles to enter the finishline. The piece must move an even number to enter the finishline. If the piece moves to many tiles it will move backwards on the finishtiles untill it reaches the first finishtile.
 
-Scenario 5:
+
+**Scenario 5:**
+
 If piece cannot move. Move different piece with same dicethrow
 
 Ex1: If 2 pieces on board, dicethrow 1-5. cannot move piece1, give player option to move piece2 instead.
