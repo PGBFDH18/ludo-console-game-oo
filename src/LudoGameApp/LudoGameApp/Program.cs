@@ -12,9 +12,7 @@ namespace ConsoleApp3
             Console.WriteLine("How many players:");
 
             var game = new LudoEngine(int.Parse(Console.ReadLine()));
-            List<Action> listOfFunc = new List<Action>();
-            listOfFunc.Add(() => game.NextTurn());
-            listOfFunc.Add(game.SkipTurn);
+         
             if (!game.OkToStart)
             {
                 Console.WriteLine("Wrong numbers of Players, only 2-4 can play");

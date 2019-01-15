@@ -61,14 +61,11 @@ namespace GameEngine
 
         }
 
-        public void Movement(int playerNr, int diceValue, int pieceNr)
-        {
-            PlayersList[playerNr - 1].Pieces[pieceNr].MovePiece(diceValue);
-        }
+        
 
         public bool MovePiece(int PieceNr)
         {
-            LastDiceThrow = 6;
+        
 
             if (PlayersList[Counter].Pieces[PieceNr - 1].InNest)
             {
@@ -203,42 +200,14 @@ namespace GameEngine
                 Counter = 0;
             }
 
-            LastDiceThrow = 6;
+            LastDiceThrow = Dice.ThrowDice();
 
             playerAndDice[0] = PlayersList[Counter].Color;
             playerAndDice[1] = "" + LastDiceThrow;
 
             return playerAndDice;
 
-            int piecesInNest = 0;
-            foreach (var item in PlayersList[Counter].Pieces)
-            {
-                if (item.InNest)
-                {
-                    piecesInNest++;
-                }
-            }
-
-            if (piecesInNest == 4)
-            {
-                return PieceFromNest(LastDiceThrow);
-            }
-
-            if (piecesInNest < 4 && piecesInNest != 0 && LastDiceThrow == 6)
-            {
-                return playerAndDice;
-            }
-            else if (piecesInNest == 3)
-            {
-
-            }
-
-            if (LastDiceThrow != 6)
-            {
-                Counter++;
-            }
-
-            return playerAndDice;
+           
         }
 
         private string[] PieceFromNest(int pieceNr)
