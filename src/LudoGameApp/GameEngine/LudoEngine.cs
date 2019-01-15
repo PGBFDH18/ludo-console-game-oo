@@ -6,7 +6,7 @@ namespace GameEngine
 {
     public class LudoEngine
     {
-        private static int Counter = 0;
+        public int Counter = 0;
         private int LastDiceThrow { get; set; }
         private int nrOfPlayer;
         public bool OkToStart { get; set; }
