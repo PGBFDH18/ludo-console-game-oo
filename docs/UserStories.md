@@ -22,6 +22,8 @@ Once you've completed 40 steps you can start to move towards the middle.
 
 After 40 steps you have 5 steps to get into the middle.
 
+Unit tests has been added to a few methods.
+
 Choose Color and playerorder
 ---
 ~~Colors are given to players.~~
