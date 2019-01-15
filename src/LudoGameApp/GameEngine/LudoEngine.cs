@@ -65,34 +65,36 @@ namespace GameEngine
 
         public bool MovePiece(int PieceNr)
         {
-        
+            Piece tempPiece = PlayersList[Counter].Pieces[PieceNr - 1];
 
-            if (PlayersList[Counter].Pieces[PieceNr - 1].InNest)
+            if (tempPiece.InNest)
             {
                 PieceFromNest(PieceNr);
                 return true;
             }
             else
             {
-                int location = PlayersList[Counter].Pieces[PieceNr - 1].StartLocation + (PlayersList[Counter].Pieces[PieceNr - 1].Movement - 1);
+                if (tempPiece.Movement >= 40)
+                {
+                    tempPiece.CompleteLap = true;   
+                }
+                int location = tempPiece.StartLocation + (tempPiece.Movement - 1);
                 int nextLocation = location + LastDiceThrow;
                 int finalStretchLocation = 0;
                 bool newLap = false;
 
-                if (PlayersList[Counter].Pieces[PieceNr - 1].Movement + LastDiceThrow >= 40)
+                if (tempPiece.CompleteLap) //(tempPiece.Movement + LastDiceThrow >= 40)
                 {
 
-                    finalStretchLocation = (PlayersList[Counter].Pieces[PieceNr - 1].Movement + LastDiceThrow) - 40;
-                    PlayersList[Counter].Pieces[PieceNr - 1].CompleteLap = true;
-                    FinalStretch[finalStretchLocation - 1].AddPieceToTile(PlayersList[Counter].Pieces[PieceNr - 1]);
-
+                    finalStretchLocation = (nextLocation - 40);
+                    FinalStretch[finalStretchLocation].AddPieceToTile(tempPiece);
 
                     for (int i = 0; i < TileList.Count && location <= 40; i++)
                     {
-                        if (PlayersList[Counter].Pieces[PieceNr - 1].PlayerColor == TileList[location].PieceList[i].PlayerColor && PlayersList[Counter].Pieces[PieceNr - 1].PieceName == TileList[location].PieceList[i].PieceName)// && PlayersList[Counter].Pieces[PieceNr - 1].Movement <= 40)
+                        if (tempPiece.PlayerColor == TileList[location].PieceList[i].PlayerColor && tempPiece.PieceName == TileList[location].PieceList[i].PieceName)
                         {
                             TileList[location].PieceList.RemoveAt(i);
-                            PlayersList[Counter].Pieces[PieceNr - 1].Movement += LastDiceThrow;
+                            tempPiece.Movement += LastDiceThrow;
 
                             return true;
                         }
@@ -100,23 +102,19 @@ namespace GameEngine
 
                     for (int i = 0; i < FinalStretch.Count; i++)
                     {
-                        if (FinalStretch[finalStretchLocation].PieceList.Count > 0 && PlayersList[Counter].Pieces[PieceNr - 1].PlayerColor == FinalStretch[finalStretchLocation].PieceList[i].PlayerColor && PlayersList[Counter].Pieces[PieceNr - 1].PieceName == FinalStretch[finalStretchLocation].PieceList[i].PieceName)
+                        if (FinalStretch[finalStretchLocation].PieceList.Count > 0 && tempPiece.PlayerColor == FinalStretch[finalStretchLocation].PieceList[i].PlayerColor && tempPiece.PieceName == FinalStretch[finalStretchLocation].PieceList[i].PieceName)
                         {
                             FinalStretch[finalStretchLocation].PieceList.RemoveAt(i);
-                            PlayersList[Counter].Pieces[PieceNr - 1].Movement += LastDiceThrow;
+                            tempPiece.Movement += LastDiceThrow;
 
 
                             return true;
                         }
                     }
-
-
-
-
                 }
 
 
-                if (nextLocation > TileList.Count - 1 && !PlayersList[Counter].Pieces[PieceNr - 1].CompleteLap)
+                if (nextLocation > TileList.Count - 1 && !tempPiece.CompleteLap)
                 {
                     nextLocation = nextLocation - TileList.Count;
                     newLap = true;
@@ -141,6 +139,7 @@ namespace GameEngine
                     }
                     else
                     {
+                        //Applied when completed a whole lap
                         for (int i = location + 1; i < TileList.Count; i++)
                         {
                             if (TileList[i].Blocked)
@@ -169,25 +168,26 @@ namespace GameEngine
                     }
                     for (int i = 0; i < TileList[location].PieceList.Count; i++)
                     {
-                        if (PlayersList[Counter].Pieces[PieceNr - 1].PlayerColor == TileList[location].PieceList[i].PlayerColor && PlayersList[Counter].Pieces[PieceNr - 1].PieceName == TileList[location].PieceList[i].PieceName)
+                        if (tempPiece.PlayerColor == TileList[location].PieceList[i].PlayerColor && tempPiece.PieceName == TileList[location].PieceList[i].PieceName)
                         {
                             TileList[location].PieceList.RemoveAt(i);
                         }
                     }
 
-                    TileList[nextLocation].AddPieceToTile(PlayersList[Counter].Pieces[PieceNr - 1]);
-
+                    TileList[nextLocation].AddPieceToTile(tempPiece);
 
                 }
+
+                tempPiece.Movement += LastDiceThrow;
+
                 if (LastDiceThrow != 6)
                 {
                     Counter++;
                 }
-                PlayersList[Counter].Pieces[PieceNr - 1].Movement += LastDiceThrow;
+
                 TileStatus();
                 return true;
             }
-
         }
 
 
@@ -200,14 +200,13 @@ namespace GameEngine
                 Counter = 0;
             }
 
-            LastDiceThrow = Dice.ThrowDice();
+            LastDiceThrow = 6;
 
             playerAndDice[0] = PlayersList[Counter].Color;
             playerAndDice[1] = "" + LastDiceThrow;
 
             return playerAndDice;
 
-           
         }
 
         private string[] PieceFromNest(int pieceNr)
