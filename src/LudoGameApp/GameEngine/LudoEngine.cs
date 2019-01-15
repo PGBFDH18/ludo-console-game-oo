@@ -74,7 +74,7 @@ namespace GameEngine
             }
             else
             {
-                if (tempPiece.Movement >= 40)
+                if (tempPiece.Movement + LastDiceThrow >= 40)
                 {
                     tempPiece.CompleteLap = true;   
                 }
@@ -83,10 +83,15 @@ namespace GameEngine
                 int finalStretchLocation = 0;
                 bool newLap = false;
 
+                if (location >= 40)
+                {
+                    location -= 40;
+                }
+
                 if (tempPiece.CompleteLap) //(tempPiece.Movement + LastDiceThrow >= 40)
                 {
 
-                    finalStretchLocation = (nextLocation - 40);
+                    finalStretchLocation = ((tempPiece.Movement + LastDiceThrow) - 41);
                     FinalStretch[finalStretchLocation].AddPieceToTile(tempPiece);
 
                     for (int i = 0; i < TileList.Count && location <= 40; i++)
@@ -166,6 +171,9 @@ namespace GameEngine
                         }
 
                     }
+
+                    
+
                     for (int i = 0; i < TileList[location].PieceList.Count; i++)
                     {
                         if (tempPiece.PlayerColor == TileList[location].PieceList[i].PlayerColor && tempPiece.PieceName == TileList[location].PieceList[i].PieceName)
