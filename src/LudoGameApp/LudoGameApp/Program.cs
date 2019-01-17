@@ -116,23 +116,36 @@ namespace ConsoleApp3
         }
         static void GameBoard()
         {
-            Console.WriteLine("             + - - - +            ");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine("             |       |");
-            Console.WriteLine(" + - - - - - +   #   + - - - - - +");
-            Console.WriteLine(" |               #               |");
-            Console.WriteLine(" |           # # # # #           |");
-            Console.WriteLine(" |               #               |");
-            Console.WriteLine(" + - - - - - +   #   + - - - - - +");
-            Console.WriteLine("             |       |");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" |     |     |       |     |     |");
-            Console.WriteLine(" + - - +     |       |     + - - +");
-            Console.WriteLine("             + - - - +            ");
+            /*
+     * Standard Ludo Board:
+     * --------------------
+     * Length: 40
+     * Size: 11x11
+     * EndZoneLength: 5 (4 + Goal)
+     * Positions:
+
+▶▶▶▶                        08 ▶ 09 ▶ 10  ⇠ (P1)
+                            ▲    ↓    ▼
+▶▶▶▶                        07   45   11
+                            ▲    ↓    ▼
+▶▶▶▶                        06   46   12
+                            ▲    ↓    ▼
+▶▶▶▶    (P0)                05   47   13
+        ⇣                   ▲    ↓    ▼
+        00 ▶ 01 ▶ 02 ▶ 03 ▶ 04   48   14 ▶ 15 ▶ 16 ▶ 17 ▶ 18
+        ▲                        ↓                        ▼
+        39 → 40 → 41 → 42 → 43 → G ← 53 ← 52 ← 51 ← 50 ← 19
+        ▲                        ↑                        ▼
+        38 ◀ 37 ◀ 36 ◀ 35 ◀ 34   58   24 ◀ 23 ◀ 22 ◀ 21 ◀ 20
+                            ▲    ↑    ▼                   ⇡
+▶▶▶▶                        33   57   25                (P2)
+                            ▲    ↑    ▼
+▶▶▶▶                        32   56   26
+                            ▲    ↑    ▼
+▶▶▶▶                        31   55   27
+                            ▲    ↑    ▼
+▶▶▶▶                (P3) ⇢  30 ◀ 29 ◀ 28
+ */
         }
     }
 }
